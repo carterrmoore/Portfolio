@@ -7,6 +7,11 @@ body {
 
 }
 
+.resume {
+    height: 100vh;
+    width: 100vw;
+}
+
 
 /* //// NAVBAR //// */
 
