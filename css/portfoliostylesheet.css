@@ -1,9 +1,14 @@
 body {
-    box-sizing: border-box;
     margin: 0 auto;
     font-family: 'Raleway', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f5f5f5;
     line-height: 1.4;
+    color: #282828;
+
+}
+
+* {
+    box-sizing: border-box;
 
 }
 
@@ -38,10 +43,10 @@ body {
     list-style: none;
     padding: 9px 24px;
     margin: 20px 10px;
-    color: black;
+    color: #282828;
     background-color: #fff;
     border-radius: 15px;
-    border: 1px solid black;
+    border: 1px solid #282828;
     font-size: 18px;
     box-sizing: border-box;
 }
@@ -52,15 +57,15 @@ body {
     cursor: pointer;
     color: white;
     transition: 350ms;
-    border: 1px solid black;
-    background-color: black;
+    border: 1px solid #282828;
+    background-color: #282828;
 
 
 }
 
 .navitem2:hover {
     color: white;
-    background-color: black;
+    background-color: #282828;
     /* color: #247bcc98; */
 
 
@@ -83,20 +88,27 @@ body {
 
 .homelink {
     text-decoration: none;
-    color: black;
+    color: #282828;
     padding: 2px 8px;
     border: 2px solid #f4f4f4;
     border-radius: 15px;
+    text-shadow: 
+        0.025em 0.025em 0 white,
+        0.035em 0.035em 0 grey,
+        0.045em 0.045em 0 black;
 
 }
 
 .homelink:hover {
-    border: 2px solid black;
+    border: 2px solid #282828;
     border-radius: 15px;
     color: white;
-    background-color: black;
+    background-color: #282828;
     transition: 350ms;
-
+    text-shadow: 
+    0.025em 0.025em 0 black,
+    0.035em 0.035em 0 grey,
+    0.045em 0.045em 0 white;
 }
 
 @media (max-width: 600px) {
@@ -148,112 +160,139 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 40px 40px 40px;
+    /* padding: 20px 40px 40px 40px; */
     font-family: sans-serif;
     width: 80vw;
-    align-self: center;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 30px;
-    /* border: solid 10px #247bcc3d; */
+    max-width: 800px;
+    margin: 10vh auto;
     background-color: #fff;
 
 }
 
 .portfolio-hero-text {
-    width: 70%;    
-    max-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .portfolio-title {
-
-    font-size: 0.5em;
+    font-size: clamp(2rem, 3vw + 1rem, 4rem);
     margin-bottom: 1em;
-    font-family: 'Merriweather', serif;
+    font-family: 'Source Code Pro', monospace;
     font-weight: 900;
     letter-spacing: 1.8px;
+    position: relative;
+    width: max-content;
+    text-shadow: 
+        0.025em 0.025em 0 white,
+        0.035em 0.035em 0 grey,
+        0.045em 0.045em 0 black;
+
 }
 
-.portfolio-intro h1 {
-    font-size: 4em;
+.portfolio-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
-.portfolio-intro h2 {
-    font-size: 1.8rem;
-    font-weight: 400;
+.portfolio-title::before {
+    background: white;
+    animation: typewriter 2.5s steps(14) forwards;
 }
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+
 
 .wave {
+    padding: .4em;
+    padding-right: .8em;
+    padding-left: 0;
+    font-size: clamp(3rem, 4vw + 2rem, 5rem);
+    text-align: center;
     animation-name: wave-animation;  
     animation-duration: 3s;        /* Change to speed up or slow down */
-    animation-iteration-count: 2;  /* Never stop waving :) */
+    animation-iteration-count: 1;  /* Never stop waving :) */
     transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
     display: inline-block;
   }
   
   @keyframes wave-animation {
-      0% { transform: rotate( 0.0deg) }
-     10% { transform: rotate(14.0deg) }  
-     20% { transform: rotate(-8.0deg) }
-     30% { transform: rotate(24.0deg) }
-     40% { transform: rotate(-4.0deg) }
-     50% { transform: rotate(20.0deg) }
-     60% { transform: rotate(-5.0deg) } 
-     70% { transform: rotate(18.0deg) }
-     80% { transform: rotate(-6.0deg) }
-     90% { transform: rotate( 10.0deg) }
-    100% { transform: rotate(-1.0deg) }
+    1% { transform: rotate( 0.0deg) }
+    10% { transform: rotate(14.0deg) }  
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(24.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(20.0deg) }
+    60% { transform: rotate(-5.0deg) } 
+    70% { transform: rotate(18.0deg) }
+    80% { transform: rotate(-6.0deg) }
+    90% { transform: rotate( 10.0deg) }
+    100% { transform: rotate(-1.0deg), scale(1)}
   }
+
+  .wave:hover {
+    animation-name: wave-animation;  
+    animation-duration: 3s;        /* Change to speed up or slow down */
+    animation-iteration-count: 1;  /* Never stop waving :) */
+    transform-origin: 70% 70%;    
+  }
+
+  .title-body {
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
+    font-weight: 400;
+    color: white;
+    animation: appear 750ms 6.5s forwards;
+    text-align: center;
+}
+
+@keyframes appear {
+    to {
+        color: black;
+    }
+}
   
 
 
 
 @media (max-width: 600px) {
 
-    .hero {
-        padding: 60px 0;
-    }
-
     .portfolio-intro {
-        padding: 10px 10px 10px 10px;
+        margin-top: 5vh;
         max-width: 500px;
         min-width: 89vw;
     }
 
-    .portfolio-intro h1 {
-        font-size: 3rem;
+    .portfolio-title{
         margin-bottom: .8em;
-        font-family: 'Merriweather', serif;
         font-weight: 900;
         letter-spacing: 1.7px;
     }
 
 
-    .portfolio-intro h2 {
-        font-size: 1.4em;
-        font-weight: 400;
-    }
-
     .portfolio-hero-text {
-        width: 85%;    
+        flex-direction: column;    
     }
 
 }
 
 @media (max-width: 450px) {
 
-    .hero {
-        padding: 40px 0;
-    }
 
     .portfolio-intro {
         min-width: 89vw;
+        margin-top: 5vh;
     }
 
     .portfolio-title {
-        font-size: 2.5em;
         margin-bottom: .4em;
-        font-family: 'Merriweather', serif;
         font-weight: 900;
         letter-spacing: 1.7px;
         padding-right: 0px;
@@ -262,7 +301,6 @@ body {
     }
 
     .portfolio-intro h2 {
-        font-size: 1.4em;
         padding: 0px 4px 18px;
         font-weight: 400;
     }
@@ -279,7 +317,7 @@ body {
     text-align: center;
     margin-top: 50px;
     font-size: 1em;
-
+    color: #282828;
 }
 .projectgrid {
     display: grid;
@@ -308,7 +346,7 @@ body {
     margin: 10px;
     text-align: center;
     border-radius: 10px;
-    /* border: 2px solid black; */
+    /* border: 2px solid #282828; */
     /* border: 1px solid #247bcc4f; */
 }
 
@@ -342,10 +380,10 @@ body {
     list-style: none;
     padding: 9px 20px;
     margin: 20px 15px;
-    color: black;
+    color: #282828;
     background-color: #fff;
     border-radius: 15px;
-    border: 1px solid black;
+    border: 1px solid #282828;
     font-size: 18px;
     box-sizing: border-box;
 }
@@ -355,8 +393,8 @@ body {
     cursor: pointer;
     color: white;
     transition: 350ms;
-    border: 1px solid black;
-    background-color: black;
+    border: 1px solid #282828;
+    background-color: #282828;
 }
 
 .project-img {
@@ -454,7 +492,7 @@ body {
     list-style: none;
     padding: 25px 45px;
     margin: 20px 10px;
-    color: black;
+    color: #282828;
     border: 5px solid #247bcc4f;
     /* border-radius: 15px; */
     font-size: 1.4em;
@@ -466,7 +504,7 @@ body {
 
 .cta:hover{
     cursor: pointer;
-    color: black;
+    color: #282828;
     transition: 350ms;
     box-shadow: 0px 0px 20px #91919188;
     border: 5px solid #247bcc;
