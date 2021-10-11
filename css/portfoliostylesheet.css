@@ -187,7 +187,6 @@ body {
         0.025em 0.025em 0 white,
         0.035em 0.035em 0 grey,
         0.045em 0.045em 0 black;
-
 }
 
 .portfolio-title::before {
@@ -201,7 +200,7 @@ body {
 
 .portfolio-title::before {
     background: white;
-    animation: typewriter 2.5s steps(14) forwards;
+    animation: typewriter 2.5s 2s steps(14) forwards;
 }
 
 @keyframes typewriter {
@@ -249,7 +248,7 @@ body {
     font-size: clamp(1rem, 1vw + 1rem, 2rem);
     font-weight: 400;
     color: white;
-    animation: appear 750ms 6.5s forwards;
+    animation: appear 750ms 5.5s forwards;
     text-align: center;
 }
 
@@ -332,10 +331,14 @@ body {
 .projectheader {
     font-size: 2.6em;
     margin-bottom: 1em;
-    font-family: 'Merriweather', serif;
+    font-family: 'Source Code Pro', monospace;
     font-weight: 900;
     letter-spacing: 1.8px;
     text-align: left;
+    text-shadow: 
+        0.025em 0.025em 0 white,
+        0.035em 0.035em 0 grey,
+        0.045em 0.045em 0 black;
 }
 
 
