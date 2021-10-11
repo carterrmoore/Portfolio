@@ -189,13 +189,15 @@ body {
         0.045em 0.045em 0 black;
 }
 
-.portfolio-title::before {
+.portfolio-title::before,
+.wave::before {
     content: '';
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+    display: block;
 }
 
 .portfolio-title::before {
@@ -216,13 +218,27 @@ body {
     padding-left: 0;
     font-size: clamp(3rem, 4vw + 2rem, 5rem);
     text-align: center;
-    animation-name: wave-animation;  
-    animation-duration: 3s;        /* Change to speed up or slow down */
-    animation-iteration-count: 1;  /* Never stop waving :) */
+    animation:
+                wave-animation 3s 1;
+    
+    
+    
+    
+    
+    /* animation-name: wave-animation;   */
+    /* animation-duration: 3s;        Change to speed up or slow down
+    animation-iteration-count: 1;  Never stop waving :) */
     transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
     display: inline-block;
+    position: relative;
   }
-  
+
+.wave::before {
+    background: white;
+    animation: wave-appear 0ms 0.5s forwards
+}
+
+
   @keyframes wave-animation {
     1% { transform: rotate( 0.0deg) }
     10% { transform: rotate(14.0deg) }  
@@ -235,13 +251,6 @@ body {
     80% { transform: rotate(-6.0deg) }
     90% { transform: rotate( 10.0deg) }
     100% { transform: rotate(-1.0deg), scale(1)}
-  }
-
-  .wave:hover {
-    animation-name: wave-animation;  
-    animation-duration: 3s;        /* Change to speed up or slow down */
-    animation-iteration-count: 1;  /* Never stop waving :) */
-    transform-origin: 70% 70%;    
   }
 
   .title-body {
@@ -258,6 +267,11 @@ body {
     }
 }
   
+@keyframes wave-appear {
+    to {
+        right: 100%;
+    }
+}
 
 
 
