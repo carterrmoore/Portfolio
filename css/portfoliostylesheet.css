@@ -27,6 +27,7 @@ body {
 
 }
 
+
 .navbar {
     margin-left: auto;
     margin-right: auto;
@@ -34,6 +35,7 @@ body {
     display: flex;
     list-style: none;
     align-items: center;
+
 }
 
 .navitem2,
@@ -165,7 +167,7 @@ body {
     width: 80vw;
     max-width: 800px;
     margin: 10vh auto;
-    background-color: #fff;
+    background-color: transparent;
 
 }
 
@@ -181,16 +183,18 @@ body {
     font-family: 'Source Code Pro', monospace;
     font-weight: 900;
     letter-spacing: 1.8px;
+    background-color: transparent;
     position: relative;
     width: max-content;
     text-shadow: 
         0.025em 0.025em 0 white,
         0.035em 0.035em 0 grey,
         0.045em 0.045em 0 black;
+        z-index: 3;
 }
 
-.portfolio-title::before,
-.wave::before {
+.portfolio-title::after,
+body::before {
     content: '';
     position: absolute;
     left: 0;
@@ -198,11 +202,12 @@ body {
     top: 0;
     bottom: 0;
     display: block;
+    z-index: 3;
 }
 
-.portfolio-title::before {
+.portfolio-title::after {
     background: white;
-    animation: typewriter 2.5s 2s steps(14) forwards;
+    animation: typewriter 2.5s 1s steps(14) forwards;
 }
 
 @keyframes typewriter {
@@ -211,6 +216,37 @@ body {
     }
 }
 
+.portfolio-title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the pseudo element right under the content */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: transparent;
+    animation: highlight 500ms ease-in 3.8s 1 forwards;
+  }
+  
+  /* @keyframes duration | easing-function | delay |
+iteration-count | direction | fill-mode | play-state | name */
+
+  @keyframes highlight {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+  
+    100% {
+      width: 100%;
+      opacity: 1;
+      background: linear-gradient(to top, #f5f5f5 50%, transparent 50%);
+    }
+  
+  }
 
 .wave {
     padding: .4em;
@@ -218,24 +254,15 @@ body {
     padding-left: 0;
     font-size: clamp(3rem, 4vw + 2rem, 5rem);
     text-align: center;
-    animation:
-                wave-animation 3s 1;
-    
-    
-    
-    
-    
-    /* animation-name: wave-animation;   */
-    /* animation-duration: 3s;        Change to speed up or slow down
-    animation-iteration-count: 1;  Never stop waving :) */
-    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    animation: wave-animation 3s 1;
+    transform-origin: 70% 70%;       
     display: inline-block;
     position: relative;
   }
 
-.wave::before {
+body::before {
     background: white;
-    animation: wave-appear 0ms 0.5s forwards
+    animation: wave-appear 0ms 0.5s forwards;
 }
 
 
@@ -257,7 +284,7 @@ body {
     font-size: clamp(1rem, 1vw + 1rem, 2rem);
     font-weight: 400;
     color: white;
-    animation: appear 750ms 5.5s forwards;
+    animation: appear 750ms 5s forwards;
     text-align: center;
 }
 
