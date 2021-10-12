@@ -23,8 +23,7 @@ body {
 
 .navdiv {
     width: 100%;
-    background-color: #f4f4f4;
-
+    background-color: #f5f5f5;
 }
 
 
@@ -230,9 +229,7 @@ body::before {
     background: transparent;
     animation: highlight 500ms ease-in 3.8s 1 forwards;
   }
-  
-  /* @keyframes duration | easing-function | delay |
-iteration-count | direction | fill-mode | play-state | name */
+
 
   @keyframes highlight {
     0% {
@@ -243,9 +240,13 @@ iteration-count | direction | fill-mode | play-state | name */
     100% {
       width: 100%;
       opacity: 1;
-      background: linear-gradient(to top, #f5f5f5 50%, transparent 50%);
+      background: #f4f4f4;
+      /* linear-gradient(to bottom, transparent 73%, #e3e3e3 27%); */
+      /* box-shadow: 0 0px 2px rgb(147, 147, 147); */
+    box-shadow: 0px 3px 5px -5px #635d5d;
+
+      border-radius: 5px;
     }
-  
   }
 
 .wave {
@@ -267,7 +268,7 @@ body::before {
 
 
   @keyframes wave-animation {
-    1% { transform: rotate( 0.0deg) }
+    1%  { transform: rotate( 0.0deg) }
     10% { transform: rotate(14.0deg) }  
     20% { transform: rotate(-8.0deg) }
     30% { transform: rotate(24.0deg) }
@@ -276,8 +277,8 @@ body::before {
     60% { transform: rotate(-5.0deg) } 
     70% { transform: rotate(18.0deg) }
     80% { transform: rotate(-6.0deg) }
-    90% { transform: rotate( 10.0deg) }
-    100% { transform: rotate(-1.0deg), scale(1)}
+    90% { transform: rotate(10.0deg) }
+    100%{ transform: rotate(-1.0deg) }
   }
 
   .title-body {
