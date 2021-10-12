@@ -240,8 +240,8 @@ body::before {
     100% {
       width: 100%;
       opacity: 1;
-      background: linear-gradient(to bottom, transparent 60%, #e3e3e3 40%);
-      box-shadow: 0px 6px 5px -5px #635d5d;
+      background: linear-gradient(to bottom, transparent 60%, #efefef 40%);
+      box-shadow: 0px 6px 5px -5px #7a7676;
     }
   }
 
