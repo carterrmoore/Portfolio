@@ -178,7 +178,8 @@ body {
 
 .portfolio-title {
     font-size: clamp(2rem, 3vw + 1rem, 4rem);
-    margin-bottom: 1em;
+    padding: 0;
+    /* margin-bottom: 1em; */
     font-family: 'Source Code Pro', monospace;
     font-weight: 900;
     letter-spacing: 1.8px;
@@ -333,7 +334,6 @@ body::before {
         font-weight: 900;
         letter-spacing: 1.7px;
         padding-right: 0px;
-        padding: 0px 5px 10px;
 
     }
 
