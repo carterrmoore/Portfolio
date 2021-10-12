@@ -240,12 +240,8 @@ body::before {
     100% {
       width: 100%;
       opacity: 1;
-      background: #f4f4f4;
-      /* linear-gradient(to bottom, transparent 73%, #e3e3e3 27%); */
-      /* box-shadow: 0 0px 2px rgb(147, 147, 147); */
-    box-shadow: 0px 3px 5px -5px #635d5d;
-
-      border-radius: 5px;
+      background: linear-gradient(to bottom, transparent 60%, #e3e3e3 40%);
+      box-shadow: 0px 6px 5px -5px #635d5d;
     }
   }
 
