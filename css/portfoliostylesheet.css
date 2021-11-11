@@ -161,7 +161,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 20px 40px 40px 40px; */
     font-family: sans-serif;
     width: 80vw;
     max-width: 800px;
@@ -179,7 +178,6 @@ body {
 .portfolio-title {
     font-size: clamp(2rem, 3vw + 1rem, 4rem);
     padding: 0;
-    /* margin-bottom: 1em; */
     font-family: 'Source Code Pro', monospace;
     font-weight: 900;
     letter-spacing: 1.8px;
