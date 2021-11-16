@@ -1,7 +1,7 @@
 body {
     margin: 0 auto;
     font-family: 'Raleway', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #f1f1f1;
     line-height: 1.4;
     color: #282828;
 
@@ -24,6 +24,7 @@ body {
 .navdiv {
     width: 100%;
     background-color: #f5f5f5;
+    height: 15vh;
 }
 
 
@@ -146,6 +147,32 @@ body {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* //// HERO //// */
 
 
@@ -155,6 +182,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: space-around;
+    height: 82vh;
 }
 
 .portfolio-intro {
@@ -165,6 +193,7 @@ body {
     width: 80vw;
     max-width: 800px;
     margin: 10vh auto;
+    margin-bottom: 0;
     background-color: transparent;
 
 }
@@ -220,7 +249,7 @@ body::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Place the pseudo element right under the content */
+    z-index: -1; 
     top: 0;
     bottom: 0;
     right: 0;
@@ -284,6 +313,14 @@ body::before {
     text-align: center;
 }
 
+.downarrow {
+    margin-top: auto;
+    margin-bottom: 0;
+    font-size: 2.5em;
+    color: white;
+    animation: bounce 3s infinite, appear 750ms 5.5s forwards;
+}
+
 @keyframes appear {
     to {
         color: black;
@@ -296,6 +333,17 @@ body::before {
     }
 }
 
+@keyframes bounce {
+    0%, 50%, 100% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-16px);
+    }
+    75% {
+      transform: translateY(-8px);
+    }
+  }
 
 
 @media (max-width: 600px) {
@@ -346,6 +394,36 @@ body::before {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* //// BODY ///// */
 
 .projectheader h2 {
@@ -357,8 +435,8 @@ body::before {
 .projectgrid {
     display: grid;
     grid-template-columns: 1fr;
-    column-gap: 30px;
-    row-gap: 30px;
+    column-gap: .5vw;
+    row-gap: .5vw;
     padding: 20px 15px;
     margin: 0 auto;
 }
@@ -379,20 +457,20 @@ body::before {
 
 
 .projectmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     padding: 10px 20px 40px;
     background-color: #fff;
     margin: 10px;
     text-align: center;
     border-radius: 10px;
-    /* border: 2px solid #282828; */
-    /* border: 1px solid #247bcc4f; */
 }
 
 .projectmain:hover{
     transition: 350ms;
     box-shadow: 0px 0px 20px #91919188;
-    /* border: 5px solid #247bcc; */
 
 }
 
@@ -405,12 +483,15 @@ body::before {
     font-family: 'Merriweather', serif;
     font-weight: 400;
     margin-bottom: 3rem;
+    margin-top: 3rem;
     line-height: 1.6;
+    max-width: 400px;
 }
 
 .projectbuttons {
     display: flex;
     justify-content: space-around;
+    justify-self: flex-end;
 }
 
 .projectbtn,
@@ -484,6 +565,12 @@ body::before {
 
 
 
+
+
+
+
+
+
 @media (max-width: 800px) {
     .projectgrid {
         grid-template-columns: 1fr;
@@ -520,6 +607,27 @@ body::before {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* //// BUTTONS //// */
 
 .div-cta {
@@ -535,7 +643,6 @@ body::before {
     margin: 20px 10px;
     color: #282828;
     border: 5px solid #247bcc4f;
-    /* border-radius: 15px; */
     font-size: 1.4em;
     text-align: center;
     border-radius: 5px;
@@ -568,6 +675,28 @@ body::before {
     
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* //// CONTACT //// */
